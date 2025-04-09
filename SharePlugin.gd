@@ -67,3 +67,24 @@ class AndroidExportPlugin extends EditorExportPlugin:
 
 	func _get_android_manifest_application_element_contents(platform: EditorExportPlatform, debug: bool) -> String:
 		return PROVIDER_TAG % [PLUGIN_PACKAGE, get_option("package/unique_name")]
+
+
+class IosExportPlugin extends EditorExportPlugin:
+	var _plugin_name = PLUGIN_NAME
+
+
+	func _supports_platform(platform: EditorExportPlatform) -> bool:
+		if platform is EditorExportPlatformIOS:
+			return true
+		return false
+
+
+	func _get_name() -> String:
+		return _plugin_name
+
+
+	func _export_begin(features: PackedStringArray, is_debug: bool, path: String, flags: int) -> void:
+		add_ios_framework("Foundation.framework")
+		add_ios_framework("UIKit.framework")
+
+		add_ios_linker_flags("-ObjC")

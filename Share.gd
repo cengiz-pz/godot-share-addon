@@ -9,7 +9,6 @@ extends Node
 const PLUGIN_SINGLETON_NAME: String = "@pluginName@"
 const PLUGIN_TARGET_OS: String = "@targetOs@"
 
-const PLUGIN_SINGLETON_NAME: String = "@pluginName@"
 const MIME_TYPE_TEXT: String = "text/plain"
 const MIME_TYPE_IMAGE: String = "image/*"
 
