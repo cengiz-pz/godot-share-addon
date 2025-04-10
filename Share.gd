@@ -3,8 +3,7 @@
 #
 
 @tool
-class_name Share
-extends Node
+class_name Share extends Node
 
 const PLUGIN_SINGLETON_NAME: String = "@pluginName@"
 const PLUGIN_TARGET_OS: String = "@targetOs@"
@@ -33,7 +32,7 @@ func _update_plugin() -> void:
 		elif OS.has_feature(PLUGIN_TARGET_OS):
 			printerr("%s singleton not found!" % PLUGIN_SINGLETON_NAME)
 		else:
-			printerr("%s plugin should be run on %s!" % [PLUGIN_SINGLETON_NAME, PLUGIN_TARGET_OS])
+			printerr("%s should be run on %s!" % [PLUGIN_SINGLETON_NAME, PLUGIN_TARGET_OS])
 
 
 func share_text(a_title: String, a_subject: String, a_content: String) -> void:
